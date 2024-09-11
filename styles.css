@@ -1,3 +1,18 @@
+:root {
+  --primary-color: #007bff;
+  --primary-hover-color: #0056b3;
+  --secondary-color: #000000e8;
+  --text-color: #0c0c0c;
+  --background-color: #f4f4f4;
+  --light-background: #eaeaea;
+  --success-color: #4caf50;
+  --success-background: #dff0d8;
+  --success-border: #c3e6cb;
+  --error-color: #a94442;
+  --error-background: #f2dede;
+  --error-border: #ebccd1;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,10 +20,11 @@
 }
 
 body {
+  font-family: riboto;
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--text-color);
   padding: 0;
   text-align: center;
 }
@@ -18,9 +34,57 @@ header {
   top: 0;
   height: 11rem;
   width: 100%;
-  background-color: #333;
+  background-color: var(--secondary-color);
   color: #fff;
   padding: 20px 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.nav-links > a {
+  outline: none;
+  text-decoration: none;
+  color: var(--success-color); /* Using variable for color */
+  position: relative;
+  padding: 5px 10px;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.nav-links > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--success-color); /* Using variable for color */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links > a:hover {
+  color: var(--success-color);
+  transform: scale(1.1);
+}
+
+.nav-links > a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 h1 {
@@ -36,7 +100,7 @@ section {
 }
 
 button {
-  background-color: #007bff;
+  background-color: var(--success-color);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -44,57 +108,13 @@ button {
   cursor: pointer;
   border-radius: 5px;
 }
-.brand {
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8em;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-}
 #logo,
 .team-logo {
-  height: 70px;
-  width: 70px;
+  height: 80px;
+  width: 80px;
 } /* Nav Bar Styles */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 10px 20px;
-}
-.navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-  transition: background-color 0.3s;
-}
-.navbar a:hover {
-  background-color: #575757;
-  border-radius: 4px;
-}
-.navbar .brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-/* Responsive Nav Bar */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .navbar a {
-    padding: 10px 0;
-  }
-}
 button:hover {
-  background-color: #0056b3;
+  background-color: var(--primary-hover-color);
 }
 
 .hidden {
@@ -106,7 +126,7 @@ ol {
   text-align: left;
   margin: 20px;
   padding: 10px;
-  background-color: #eaeaea;
+  background-color: var(--light-background);
   border-radius: 5px;
   list-style-position: inside;
 }
@@ -114,19 +134,23 @@ ol {
 p {
   margin: 10px 0;
   padding: 10px;
-  background-color: #eaeaea;
+  background-color: var(--light-background);
   border-radius: 5px;
 }
+
 footer {
   margin: 0;
 }
+
 .team-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #333;
-  color: #eaeaea;
+  background-color: var(--secondary-color);
+  color: var(--light-background);
+  width: 100%;
 }
+
 .members-container {
   padding: 1em;
   display: flex;
@@ -185,25 +209,7 @@ footer {
 .member-card img:hover {
   transform: scale(1.1);
 }
-/* Responsive Styles */
-@media (max-width: 600px) {
-  p {
-    font-size: 0.9rem;
-  }
-  h1 {
-    font-size: 1.3em;
-  }
-  header {
-    height: 12rem;
-  }
-  main {
-    margin-top: 12rem;
-  }
-  button {
-    width: 10rem;
-    margin: 5px 0;
-  }
-}
+
 /* Contact Us Section */
 .contact {
   background: #fff;
@@ -212,9 +218,10 @@ footer {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 2rem 0;
 }
+
 #contact-us {
-  color: white;
-  background-color: #333;
+  color: #fff;
+  background-color: var(--secondary-color);
   margin-top: 0;
   min-height: max-content;
   height: 3em;
@@ -245,19 +252,22 @@ textarea {
 }
 
 button[type="submit"] {
-  background: #007bff;
+  background: var(--primary-color);
   color: #fff;
   border: none;
   padding: 0.75rem;
   border-radius: 4px;
   cursor: pointer;
 }
+
+button[type="submit"]:hover {
+  background: var(--primary-hover-color);
+}
+
 textarea {
   width: 90%;
 }
-button[type="submit"]:hover {
-  background: #0056b3;
-}
+
 /* Response message container */
 #response-message {
   margin-top: 20px;
@@ -269,14 +279,39 @@ button[type="submit"]:hover {
 
 /* Success message styling */
 #response-message.success {
-  color: #4caf50; /* Green color for success */
-  background-color: #dff0d8; /* Light green background */
-  border: 1px solid #c3e6cb; /* Green border */
+  color: var(--success-color);
+  background-color: var(--success-background);
+  border: 1px solid var(--success-border);
 }
 
 /* Error message styling */
 #response-message.error {
-  color: #a94442; /* Red color for error */
-  background-color: #f2dede; /* Light red background */
-  border: 1px solid #ebccd1; /* Red border */
+  color: var(--error-color);
+  background-color: var(--error-background);
+  border: 1px solid var(--error-border);
+}
+/* Responsive Styles */
+@media (max-width: 600px) {
+  p {
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.3em;
+  }
+  .nav-links > a {
+    font-size: 0.8rem;
+  }
+  header {
+    height: 11rem;
+  }
+
+  main {
+    margin-top: 12rem;
+  }
+
+  button {
+    width: 10rem;
+    margin: 5px 0;
+  }
 }
