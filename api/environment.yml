@@ -1,0 +1,14 @@
+name: myenv
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.12
+  - flask=2.3.3
+  - flask-sqlalchemy
+  - psycopg2-binary
+  - pip
+  - pip:
+    - flask
+    - flask-sqlalchemy
+    - psycopg2-binary

@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  database:
+    image: postgres
+    environment:
+      POSTGRES_USER: baldwin
+      POSTGRES_PASSWORD: baldwin_password
+      POSTGRES_DB: fatal_error_db
+    volumes:
+      - database_data:/var/lib/postgresql/data
+    networks:
+      - backend
+    ports:
+      - "5432:5432" # Expose PostgreSQL
+
+  api:
+    build:
+      context: .
+    
+    ports:
+      - "3000:3000"  # Expose API
+    depends_on:
+      - database
+    environment:
+      POSTGRES_USER: baldwin
+      POSTGRES_PASSWORD: baldwin_password
+      POSTGRES_DB: fatal_error_db
+      POSTGRES_HOST: database
+      POSTGRES_PORT: 5432
+    networks:
+      - backend
+
+volumes:
+  database_data:
+
+networks:
+  backend:

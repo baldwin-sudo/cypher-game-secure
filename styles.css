@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  height: 11rem;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+main {
+  margin-top: 11rem;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.brand {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+#logo,
+.team-logo {
+  height: 70px;
+  width: 70px;
+} /* Nav Bar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}
+.navbar a:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
+.navbar .brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+/* Responsive Nav Bar */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar a {
+    padding: 10px 0;
+  }
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
+
+ul,
+ol {
+  text-align: left;
+  margin: 20px;
+  padding: 10px;
+  background-color: #eaeaea;
+  border-radius: 5px;
+  list-style-position: inside;
+}
+
+p {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #eaeaea;
+  border-radius: 5px;
+}
+footer {
+  margin: 0;
+}
+.team-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  color: #eaeaea;
+}
+.members-container {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.member-card {
+  margin: 5px;
+  width: 140px;
+  cursor: pointer;
+}
+
+.member-card img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.member-card img:hover {
+  transform: scale(1.1);
+}
+/* Responsive Styles */
+@media (max-width: 600px) {
+  p {
+    font-size: 0.9rem;
+  }
+  h1 {
+    font-size: 1.3em;
+  }
+  header {
+    height: 12rem;
+  }
+  main {
+    margin-top: 12rem;
+  }
+  button {
+    width: 10rem;
+    margin: 5px 0;
+  }
+}
+/* Contact Us Section */
+.contact {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+#contact-us {
+  color: white;
+  background-color: #333;
+  margin-top: 0;
+  min-height: max-content;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 90%;
+}
+
+button[type="submit"] {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+textarea {
+  width: 90%;
+}
+button[type="submit"]:hover {
+  background: #0056b3;
+}
+/* Response message container */
+#response-message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Success message styling */
+#response-message.success {
+  color: #4caf50; /* Green color for success */
+  background-color: #dff0d8; /* Light green background */
+  border: 1px solid #c3e6cb; /* Green border */
+}
+
+/* Error message styling */
+#response-message.error {
+  color: #a94442; /* Red color for error */
+  background-color: #f2dede; /* Light red background */
+  border: 1px solid #ebccd1; /* Red border */
+}
