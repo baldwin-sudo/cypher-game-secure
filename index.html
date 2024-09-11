@@ -11,8 +11,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-
-    <style></style>
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -38,28 +36,29 @@
       <section id="explanation" class="explanation">
         <h2 class="team-header">Game Explanation</h2>
         <p>
-          In this challenge, you need to decrypt a secret message by reversing
-          four different algorithms. The final message is hidden, and your goal
-          is to reveal it by following each step carefully. Ready?
+          In this challenge, you need to decrypt a secret message using a Caesar
+          Cipher and solve an anagram. Each word has been right-shifted by a
+          key, which is the length of the word itself. Can you uncover the final
+          phrase?
+        </p>
+        <p class="hint">
+          Each participant is allowed one hint or answer to assist them during
+          the challenge. Use it wisely!
+        </p>
+        <p>
+          Here is the encrypted phrase:
+          <strong class="secret">"DLSJTVL VQ KFYFQ JWWTW"</strong>
         </p>
         <button onclick="toggleSection('game-rules')">Show Game Steps</button>
         <div id="game-rules" class="hidden">
           <ul>
             <li>
-              <strong>Anagram:</strong> The message is scrambled into a random
-              arrangement of letters.
+              <strong>Caesar Cipher:</strong> Each word is scrambled by shifting
+              the letters based on the length of the word.
             </li>
             <li>
-              <strong>Binary:</strong> Each letter is converted into binary (0s
-              and 1s).
-            </li>
-            <li>
-              <strong>Morse Code:</strong> The binary numbers are translated
-              into Morse code where 1 is a dot (·) and 0 is a dash (−).
-            </li>
-            <li>
-              <strong>Caesar Cipher:</strong> The letters in Morse code are
-              shifted by a set number to create the final encrypted message.
+              <strong>Anagram:</strong> After decrypting the words, rearrange
+              the letters to solve the final anagram.
             </li>
           </ul>
         </div>
@@ -68,38 +67,23 @@
       <!-- Algorithm Explanation Section -->
       <section class="algorithms">
         <h2 id="algorithms" class="team-header">Algorithm Explanations</h2>
-        <button onclick="toggleSection('anagram')">Anagram</button>
-
-        <div id="anagram" class="hidden">
-          <p>
-            An anagram rearranges the letters of a word or phrase into a new
-            order. For example, "LOOK UNDER TABLE" becomes "KLRO DTEEN ABLEU."
-          </p>
-        </div>
-
-        <button onclick="toggleSection('binary')">Binary</button>
-        <div id="binary" class="hidden">
-          <p>
-            Each letter is converted into a string of 0s and 1s. For example,
-            the letter "L" becomes 01001100 in binary.
-          </p>
-        </div>
-
-        <button onclick="toggleSection('morse')">Morse Code</button>
-        <div id="morse" class="hidden">
-          <p>
-            In Morse code, letters are represented by dots (·) and dashes (−).
-            For example, binary 1 becomes a dot (·), and binary 0 becomes a dash
-            (−).
-          </p>
-        </div>
 
         <button onclick="toggleSection('caesar')">Caesar Cipher</button>
         <div id="caesar" class="hidden">
           <p>
-            A Caesar cipher shifts each letter in a message by a set number. For
-            example, if we shift by 3, "A" becomes "D," "B" becomes "E," and so
-            on.
+            A Caesar cipher shifts each letter in a message by a set number. The
+            key here is the length of each word. For example, if the word "LOOK"
+            has 4 letters, each letter will be shifted by 4 positions to get
+            "PSPS".
+          </p>
+        </div>
+
+        <button onclick="toggleSection('anagram')">Anagram</button>
+        <div id="anagram" class="hidden">
+          <p>
+            An anagram rearranges the letters of a word or phrase into a new
+            order. Once you decrypt the scrambled words using the Caesar cipher,
+            you'll need to solve the anagram to reveal the final message.
           </p>
         </div>
       </section>
@@ -110,28 +94,17 @@
         <p>To solve the cipher, follow these steps:</p>
         <ol>
           <li>
-            <strong>Reverse the Caesar Cipher:</strong> Shift the letters in the
-            Morse code message back by the set number to reveal the original
-            Morse code.
-          </li>
-          <li>
-            <strong>Translate Morse Code to Binary:</strong> Convert the Morse
-            code (dots and dashes) back into binary numbers, where dots (·) are
-            1s and dashes (−) are 0s.
-          </li>
-          <li>
-            <strong>Convert Binary to Letters:</strong> Decode the binary
-            numbers into their corresponding letters to reveal the scrambled
-            message: "KLRO DTEEN ABLEU."
+            <strong>Decrypt the Caesar Cipher:</strong> Shift the letters in
+            each word back by the number equal to the length of the word.
           </li>
           <li>
             <strong>Solve the Anagram:</strong> Rearrange the letters of the
-            scrambled message to get the final phrase: "LOOK UNDER THE TABLE."
+            decrypted words to find the final hidden message.
           </li>
         </ol>
         <p>
-          By carefully following these steps, you will uncover the hidden
-          message and complete the challenge!
+          By following these steps, you will reveal the hidden message and
+          complete the challenge!
         </p>
       </section>
 
@@ -146,6 +119,7 @@
           Core Team
         </h1>
         <div class="members-container">
+          <!-- Add team members here -->
           <div class="member-card">
             <img
               src="./assets/badges/bilal.jpg"
@@ -213,7 +187,6 @@
       </section>
 
       <!-- Contact Us Section -->
-      <!-- Contact Us Section -->
       <section id="contact">
         <h2 id="contact-us">
           <img
@@ -240,14 +213,6 @@
         <div id="response-message"></div>
       </section>
     </main>
-
-    <!-- Modal Overlay -->
-    <div id="myModal" class="modal">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div class="modal-content">
-        <img id="modalImg" src="" alt="Large Image" />
-      </div>
-    </div>
 
     <footer>
       <p>&copy; 2024 Fatal Error Club</p>

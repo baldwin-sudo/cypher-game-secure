@@ -140,6 +140,12 @@ p {
 footer {
   margin: 0;
 }
+.hint {
+  color: #4caf50;
+}
+.secret {
+  color: var(--error-color);
+}
 
 .team-header {
   display: flex;
